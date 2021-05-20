@@ -1,0 +1,80 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+section{
+    height: 100vh;
+    width: 100%;
+    background: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+section .loader{
+     height: 2rem;
+     width: 2rem;
+     position: relative;
+}
+
+.loader .ball{
+    position: absolute;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%; 
+}
+
+.loader .upper{
+    left: 0;
+    top: -2rem;
+    background: #ff337a;
+    animation: upper 1s infinite;
+}
+@keyframes upper{
+    50%,100%{
+        top: 2rem;
+    }
+}
+
+
+.loader .right{
+    bottom: 0;
+    right: -2rem;
+    background: #2da2ff;
+    animation: right 1s infinite;
+
+}
+@keyframes right{
+    50%,100%{
+        right: 2rem;
+    }
+}
+
+
+.loader .lower{
+    bottom: -2rem;
+    right: 0;
+    background: #ffff00;
+    animation: lower 1s infinite;
+}
+@keyframes lower{
+    50%,100%{
+        bottom: 2rem;
+    }
+}
+
+
+.loader .left{
+    bottom: 0;
+    left: -2rem;
+    background: #00ff00;
+    animation: left 1s infinite;
+}
+
+@keyframes left{
+    50%,100%{
+        left: 2rem;
+    }
+}
