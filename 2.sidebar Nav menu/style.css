@@ -1,0 +1,98 @@
+body{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: url(/images/1.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    font-family: sans-serif;
+}
+
+nav{
+    height: 100%;
+    position: fixed;
+    left: -32px;
+    top: 0;
+    z-index: 100;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    
+}
+
+.bar{
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 990;
+    height: 100%;
+    background: rgba(225, 225, 225, 0.30);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.35);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(225, 225, 225, 0.18); 
+}
+
+.bar li{
+    list-style: none;
+}
+
+.bar a{
+    display: block;
+    width: 4rem;
+    height: 4rem;
+    line-height: 4rem;
+    text-align: center;
+    font-size: 1.6rem;
+    color: white;
+    transition: all 0.5s ease-out;
+    font-family: sans-serif;
+}
+
+.bar a:hover{
+    color: white;
+    transform: translateX(10px) scale(1.1);
+}
+
+nav:hover .text{
+    transform: rotateY(0deg);
+}
+
+.text{
+    position: absolute;
+    left: 3.9rem;
+    top: 0;
+    z-index: 980;
+    height: 100%;
+    background: rgba(225, 225, 225, 0.30);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.35);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(225, 225, 225, 0.18); 
+    border-right: 1px solid rgba(0, 0, 0, 0.4);
+    transition: transform 0.6s linear;
+    backface-visibility: hidden;
+    transform-origin: left;
+    transform: perspective(1000px) rotateY(90deg);
+}
+
+.text li{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.text a{
+    display: block;
+    width: 200px;
+    height: 4rem;
+    line-height: 4rem;
+    text-indent: 1rem;
+    font-size: 1.4rem;
+    text-decoration: none;
+    color: white;
+    transition: all 1s ease;
+    font-family: sans-serif;
+}
+
+.text a:hover{
+    color: white;
+    transform: translateX(10px);
+}
