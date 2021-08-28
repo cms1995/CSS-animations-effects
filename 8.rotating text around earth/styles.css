@@ -1,0 +1,92 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: monospace;
+}
+
+body{/* 2° */
+    background: url(images/bg.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+section{/* 3° */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    transform-style: preserve-3d; /* ! */
+}
+
+.earth{ /* 4° */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 300px; /* lo saco de las dimensiones originales de la img */
+    background: #fff;
+    border-radius: 50%;
+    background: url(images/image.jpg);
+    background-size: cover;
+    background-repeat: repeat-x;
+    border-radius: 50%;
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 1),
+    0 0 50px #3e67fd;
+    animation: EarthAnimation 15s linear infinite;
+}
+
+@keyframes EarthAnimation{ /* 5° */
+    0%{
+        background-position: 0 0;
+    }
+    100%{
+        background-position: -750px 0; /* con esto empezará a girar. Los 750px de ancho los saco de las dimensiones originales de la img */       
+    }
+}
+
+.circle{
+    transform-style: preserve-3d;
+    animation: textAnimation 10s linear infinite; /* 8° */
+}/* 6° */
+
+.circle span{/* 7° */
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #fff;
+    color: #35146f;
+    font-size: 3em;
+    transform-origin: center;
+    transform-style: preserve-3d;
+    padding: 5px 11px;
+    transform: rotateY(calc(var(--i) * calc(360deg / 33)))
+    translateZ(200px); /* con esto apareceran las letras para luego empezar a moldearlas alrededor de la img */
+    border-top: 3px solid #35146f; /* 9° */
+    border-bottom: 3px solid #35146f  /* 9 */
+}
+
+/* 10°: esto es para q en la parte trasera del cartel no aparezcan las letras escritas x detras  */
+.circle span::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff; /* la parte de atras tendtra fondo blaco */
+    transform: translateZ(-5px); /* recorda q los 5px de alto los saco del padding de arriba   */
+}
+
+@keyframes textAnimation{ /* 8° */
+    0%{
+        transform: perspective(1000px) rotateY(360deg)
+        rotateX(10deg) translateY(-30px);
+    }
+    100%{
+        transform: perspective(1000px) rotateY(0deg)
+        rotateX(10deg) translateY(-30px);
+    }
+}
